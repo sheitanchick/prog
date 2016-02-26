@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <math.h>
+#include <stdlib.h>
+
+int fun1(int);
+int fun2(int, int);
+main()
+      {int n;
+        printf("\nVvedite chislo n=");
+         scanf("%d", &n);
+          fun1(n);
+          getchar();
+          getchar();         
+	  }
+int fun1(int n) 
+	  {int k = sqrt(n);
+	    if (n == 2) printf("\nChislo 2 prostoe");
+	     if (n == 3) printf("\nChislo 3 prostoe");
+	      else{int g=1;
+	   for (int i=2; i<=k;i++)
+	   		{
+			 if (n%i == 0) 
+			   {fun2(n, k);
+			     break;
+			   }
+			   
+			   else {g++;
+			   		  continue;
+					}
+			}
+			if (g == k)
+			printf("\nchislo n=%d prostoe", n);    
+			} 
+	  }   	
+      
+int fun2(int n, int k)
+      {  int l=0;
+       for (int i=2;i<=k;i++)
+            {if(n%i == 0) 
+			 {printf("\n delitel %d = %d", 2*l, i);
+			   printf("\n delitel %d = %d", 2*l+1, n/i);
+   			    l++;        
+			 } 
+			} 
+    
+	  }      
